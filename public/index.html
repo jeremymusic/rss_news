@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSS News Reader</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>RSS News Reader</h1>
+      <button id="theme-toggle" aria-label="Toggle dark mode">&#9790;</button>
+    </div>
+    <nav id="source-nav" aria-label="News sources">
+      <div class="nav-inner" id="source-buttons">
+        <span class="nav-loading">Loading sources…</span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div id="placeholder" class="placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v8a2 2 0 01-2 2z"/>
+        <path d="M15 2v6h6M9 15h6M9 11h3"/>
+      </svg>
+      <p>Select a news source above to load articles.</p>
+    </div>
+    <div id="spinner" class="spinner hidden" aria-live="polite">
+      <div class="spinner-ring"></div>
+      <span>Loading feed…</span>
+    </div>
+    <div id="error-box" class="error-box hidden" role="alert"></div>
+    <div id="feed-meta" class="feed-meta hidden">
+      <h2 id="feed-title"></h2>
+      <p id="feed-desc"></p>
+    </div>
+    <ul id="articles" class="articles" aria-live="polite"></ul>
+  </main>
+
+  <footer>
+    <p>Feeds are fetched live. Content belongs to respective publishers.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

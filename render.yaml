@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: rss-news-reader
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/sources
+    envVars:
+      - key: NODE_ENV
+        value: production
